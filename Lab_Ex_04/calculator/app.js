@@ -93,6 +93,8 @@ function getInputs(e) {
     case '1':
     case '0':
     case '.':
+    case '(':
+    case ')':
       textInput.textContent += operator;
       break;
     case 'pow':
