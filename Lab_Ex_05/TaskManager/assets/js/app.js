@@ -62,7 +62,7 @@ function reloadPage() {
 
 function filterTasks(e) {
   var all = Array.from(taskList.children);
-  var fl = all.forEach((el) => {
+  all.forEach((el) => {
     if (el.textContent.includes(e.target.value)) {
       el.style.display = 'block';
     } else {
@@ -72,6 +72,7 @@ function filterTasks(e) {
 }
 function sortIt(direction) {
   var tasks = Array.from(taskList.children).sort(function (a, b) {
+    console.log(a);
     if (a.item1 == b.item1) {
       return a.innerHTML > b.innerHTML ? 1 : a.innerHTML < b.innerHTML ? -1 : 0;
     }

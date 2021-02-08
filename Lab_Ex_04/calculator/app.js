@@ -106,7 +106,12 @@ function getInputs(e) {
 }
 
 function compute(e) {
-  resultBtn.textContent = eval(textInput.textContent);
+  try {
+    resultBtn.textContent = eval(textInput.textContent);
+  } catch (error) {
+    resultBtn.textContent = 'Error: Wrong input!';
+  }
+  let r = eval(textInput.textContent);
 }
 function clearScreen(e) {
   textInput.textContent = '';

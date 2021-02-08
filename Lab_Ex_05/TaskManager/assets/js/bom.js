@@ -18,7 +18,7 @@ Good Luck !!!
 
 // Display the BOM Information on the innerHTML of the elements
 
-const allList = document.querySelectorAll('.collection a');
+const allList = document.querySelectorAll('.collection a span');
 var values = [
   window.location.href,
   window.location.host,
