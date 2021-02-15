@@ -1,4 +1,9 @@
 const search = document.querySelector('#search');
+const loader = document.querySelector('.s');
+
+const min = document.querySelector('.clock .min');
+const sec = document.querySelector('.clock .sec');
+const hour = document.querySelector('.clock .hour');
 
 // UI Vars
 const postDiv3 = document.getElementById('thePosts');
@@ -6,8 +11,41 @@ search.addEventListener('keyup', filterTasks);
 //Load Every thing ....
 document.addEventListener('DOMContentLoaded', () => {
   //load_fromPlaceHolder();
-  loadDataNew();
+  // loadDataNew();
 });
+// setTimeout(() => {
+//   loader.classList.remove('active');
+// }, 700);
+
+// clock rotate
+// var current_time = new Date();
+// sec.style.transform = `rotate(${current_time.getSeconds() * 6}deg)`;
+// console.log(current_time.getMinutes());
+// min.style.transform = `rotate(${current_time.getMinutes() * 6}deg)`;
+// // hour.style.transform = `rotate(${current_time.getHours()}deg)`;
+
+var time = 0;
+var min_time = 0;
+var hour_time = 0;
+setInterval(() => {
+  if (time == 360) {
+    min_time += 1;
+    min.style.transform = `rotate(${min_time * 6}deg)`;
+    if (min_time % 5 == 0) {
+      hour_time += 1;
+      hour.style.transform = `rotate(${hour_time * 2}deg)`;
+    }
+    time = 0;
+  }
+  if (min_time == 360) {
+    min_time = 0;
+  }
+  if (hour_time == 60) {
+    hour_time = 0;
+  }
+  time += 6;
+  sec.style.transform = `rotate(${time}deg)`;
+}, 1000);
 
 //load a single customer function
 function load_fromPlaceHolder() {
@@ -89,6 +127,7 @@ function loadDataNew() {
 `;
       });
       postDiv3.innerHTML = output;
+      loader.classList.remove('active');
     })
     .catch(function (err) {
       console.log(err);

@@ -4,3 +4,43 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
+.clock {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background: url(./asset/js/photo-1609980775647-1fb1ef376268.jpeg) center/cover
+    no-repeat;
+}
+.clock .hour {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+  transform: translate(-50%) rotate(0deg);
+  box-shadow: 1px 1px 10px black;
+  height: 30px;
+  width: 2px;
+  background-color: white;
+}
+.clock .sec {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+  transform: translate(-50%) rotate(0deg);
+  box-shadow: 1px 1px 10px black;
+  height: 50px;
+  width: 2px;
+  background-color: white;
+}
+.clock .min {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+  transform: translate(-50%) rotate(0deg);
+  box-shadow: 1px 1px 10px black;
+  height: 40px;
+  width: 2px;
+  background-color: white;
+}
